@@ -438,45 +438,6 @@ a {
     justify-content: center;
 }
 
-/* Scroll Mouse Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    opacity: 0.8;
-}
-
-.mouse {
-    width: 26px;
-    height: 42px;
-    border: 2px solid var(--text-secondary);
-    border-radius: 15px;
-    position: relative;
-}
-
-.wheel {
-    width: 4px;
-    height: 8px;
-    background-color: var(--accent-primary);
-    border-radius: 2px;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scrollWheel 1.8s infinite;
-}
-
-@keyframes scrollWheel {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    50% { transform: translate(-50%, 8px); opacity: 0; }
-    100% { transform: translate(-50%, 0); opacity: 1; }
-}
-
 /* --------------------------------------------------------------------------
    SECTION HEADERS
    -------------------------------------------------------------------------- */
