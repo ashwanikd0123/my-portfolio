@@ -17,31 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Slow back-and-forth micro-animation for each petal
-    function startPermanentPetalAnimation() {
-        const petals = document.querySelectorAll('.petal');
-        petals.forEach((p, idx) => {
-            let angle = p.style.transform.replace('rotate(', '').replace('deg)', '');
-            angle = parseFloat(angle);
-            const delay = (idx % 2 === 0) ? 0 : 100;
-            p.animate([
-                { transform: `rotate(${angle}deg)` },
-                { transform: `rotate(${angle + 2}deg)` },
-                { transform: `rotate(${angle}deg)` },
-                { transform: `rotate(${angle - 2}deg)` },
-                { transform: `rotate(${angle}deg)` }
-            ], {
-                duration: 3000,
-                iterations: Infinity,
-                easing: 'linear',
-                direction: 'alternate',
-                delay: delay
-            });
-        });
-    }
-
-    // Delay start until entrance transition is completed
-    setTimeout(startPermanentPetalAnimation, 4200);
 
     /* --------------------------------------------------------------------------
        2. MOBILE HAMBURGER NAVIGATION DRAWER
@@ -90,15 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const topNavLinks = document.querySelectorAll('.nav-link');
     const sidebarDots = document.querySelectorAll('.sidebar-dot');
 
-    // Sticky header shadow change on scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    // Keep scroll work to one update per rendered frame. The desktop layout
+    // scrolls inside `.scroll-container`; mobile scrolls the page itself.
+    const scrollContainer = document.querySelector('.scroll-container');
+    let scrollUpdateQueued = false;
 
+    function updateHeaderOnScroll() {
+        const scrollTop = Math.max(window.scrollY, scrollContainer?.scrollTop || 0);
+        header.classList.toggle('scrolled', scrollTop > 50);
+        scrollUpdateQueued = false;
+    }
+
+    function queueScrollUpdate() {
+        if (!scrollUpdateQueued) {
+            scrollUpdateQueued = true;
+            requestAnimationFrame(updateHeaderOnScroll);
+        }
+    }
+
+    window.addEventListener('scroll', queueScrollUpdate, { passive: true });
+    scrollContainer?.addEventListener('scroll', queueScrollUpdate, { passive: true });
+    updateHeaderOnScroll();
     // Observer options for active sections
     const observerOptions = {
         root: null,
@@ -132,14 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // Trigger Reveal Entry Animations
-                const reveals = entry.target.querySelectorAll('.reveal');
-                reveals.forEach((el, index) => {
-                    // Stagger animation slightly for child elements
-                    setTimeout(() => {
-                        el.classList.add('revealed');
-                    }, index * 100);
-                });
+                // Reveal each section once. Re-entering a section should not
+                // queue another set of timers while the user is scrolling.
+                if (!entry.target.dataset.revealed) {
+                    entry.target.dataset.revealed = 'true';
+                    entry.target.querySelectorAll('.reveal').forEach((el, index) => {
+                        setTimeout(() => el.classList.add('revealed'), index * 75);
+                    });
+                }
             }
         });
     }, observerOptions);
