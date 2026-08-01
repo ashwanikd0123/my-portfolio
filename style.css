@@ -827,92 +827,20 @@ a {
    -------------------------------------------------------------------------- */
 .contact-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    max-width: 640px;
     margin-top: 10px;
 }
 
-.contact-form-container {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 40px;
-    border-radius: 6px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.contact-form-container h3,
 .contact-info-container h3 {
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 25px;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.form-group {
-    position: relative;
-    width: 100%;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    background: rgba(15, 14, 34, 0.6);
-    border: 1.5px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 12px 16px;
-    border-radius: 4px;
-    outline: none;
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    transition: var(--transition-fast);
-}
-
-.form-group textarea {
-    resize: none;
-}
-
-.form-group label {
-    position: absolute;
-    left: 16px;
-    top: 12px;
-    color: var(--text-secondary);
-    pointer-events: none;
-    transition: var(--transition-fast);
-    font-size: 0.95rem;
-}
-
-/* Floating Label Logic */
-.form-group input:focus ~ label,
-.form-group input:not(:placeholder-shown) ~ label,
-.form-group textarea:focus ~ label,
-.form-group textarea:not(:placeholder-shown) ~ label {
-    top: -10px;
-    left: 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--accent-primary);
-    background: #19183B;
-    padding: 0 8px;
-    border-radius: 2px;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 10px rgba(100, 255, 218, 0.1);
-}
-
-/* Info Side */
 .contact-info-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .contact-pitch {
@@ -1055,9 +983,6 @@ a {
     .hero-tagline {
         font-size: 1.8rem;
     }
-    .contact-grid {
-        gap: 30px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1121,11 +1046,6 @@ a {
         gap: 5px;
     }
     
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
     .contact-info-container {
         gap: 30px;
     }
@@ -1156,9 +1076,6 @@ a {
         padding: 20px;
     }
     .skills-card {
-        padding: 20px;
-    }
-    .contact-form-container {
         padding: 20px;
     }
 }
