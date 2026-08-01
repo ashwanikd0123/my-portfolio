@@ -102,8 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Observer options for active sections
     const observerOptions = {
         root: null,
-        rootMargin: '-30% 0px -30% 0px', // Trigger when section occupies the active middle portion of viewport
-        threshold: 0.15
+        // Projects grows far taller than a phone viewport. A percentage threshold
+        // can then never be met, leaving every `.reveal` item invisible.
+        // Reveal a section as soon as it enters the viewport instead.
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {

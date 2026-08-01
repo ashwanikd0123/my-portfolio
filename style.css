@@ -1075,6 +1075,9 @@ a {
     .project-card {
         padding: 20px;
     }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
     .skills-card {
         padding: 20px;
     }
