@@ -7,3 +7,9 @@
 
 ## Accent
 #19183B
+
+## fonts
+### serif
+"Noto Serif", serif;
+### Sans serif
+"Open Sans", sans-serif;

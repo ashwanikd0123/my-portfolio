@@ -1,0 +1,85 @@
+1. On-Device Sky Segmentation Pipeline (Deep Learning)
+Role: Mobile ML & Performance Engineer
+
+Experience / Domain: On-Device AI / Computer Vision / Model Optimization
+
+Project Description:
+Designed and deployed an end-to-end compact Semantic Segmentation pipeline optimized for resource-constrained mobile hardware. Built an automated deployment workflow connecting deep learning models to native Android runtime packages (AAR).
+
+Key Skills: Python, CNN, Semantic Segmentation, Computer Vision, INT8 Quantization, Model Optimization, CI/CD Automation, AAR Bundling
+
+Deliverables & Impact:
+
+30% Performance Boost: Optimized image processing pipeline latency and memory overhead for real-time mobile inference.
+
+Compact Model Footprint: Trained and quantized a compact CNN model maintaining high mIoU accuracy while reducing RAM utilization.
+
+Automated CI/CD Deployment: Built a reproducible workflow (Training -> Export -> AAR Build -> Integration Testing) cutting feature integration overhead by 50%.
+
+2. Hybrid Web-to-Native iOS Health Platform
+Role: Senior iOS / Hybrid Systems Engineer
+
+Experience / Domain: iOS Architecture / Cross-Platform Bridging / Performance Engineering
+
+Project Description:
+Architected secure Web-to-Native iOS communication pipelines for a Health application. Built backward-compatible SwiftUI WebView interfaces with custom JavaScript bridges and deep-linking protocols.
+
+Key Skills: SwiftUI, JavaScript, Native-to-Web Bridge, Deep-Linking, Memory Profiling, iOS Architecture
+
+Deliverables & Impact:
+
+Smooth 60 FPS Rendering: Engineered a high-performance SwiftUI WebView module maintaining steady frame rates on low-end devices.
+
+30% Data Latency Reduction: Implemented secure bidirectional JS bridging for seamless state communication between web components and native screens.
+
+25% Frame Drop Reduction: Reduced memory footprint and optimized view hierarchy, improving responsiveness across legacy iOS versions.
+
+3. Android System Settings & Display Cutout Module
+Role: Android System Framework Engineer
+
+Experience / Domain: System UI / Display Architecture / Native Android SDK
+
+Project Description:
+Designed and integrated custom Display Settings UI modules for flagship Android devices. Handled edge-to-edge screen rendering, display cutout adjustments (notch/hole-punch support), and dynamic layout orientation controls.
+
+Key Skills: Java, Kotlin, Android Framework, DisplayCutout API, WindowInsets, System UI, Backward Compatibility
+
+Deliverables & Impact:
+
+Edge-to-Edge Experience: Successfully engineered full-screen layout adaptation for varied display cutout profiles and device form factors.
+
+Framework Stability: Delivered robust system-level UI code adhering to strict backward compatibility and zero post-release crash metrics.
+
+4. Dynamic Contacts & People Selector Engine
+Role: Native Android UI / Feature Engineer
+
+Experience / Domain: Native UI Components / Custom Views / State Management
+
+Project Description:
+Engineered a production-ready dynamic contacts selection module for Android. Integrated an optimized RecyclerView with real-time UI chips sync, allowing users to select and manage multi-contact selections seamlessly.
+
+Key Skills: Kotlin, RecyclerView, Custom Views, Material Chips, DiffUtil, State Management, Performance Optimization
+
+Deliverables & Impact:
+
+Smooth Recycler Sync: Implemented DiffUtil and custom Chip-Group synchronization to eliminate UI stuttering during fast scroll and multi-selection.
+
+Reusable UI Component: Modularized the People Selector into an isolated UI library used across multiple application contact screens.
+
+5. Automated Algorithmic Trading & Risk Engine
+Role: Systems Architect & Full-Stack Developer
+
+Experience / Domain: Algorithmic Trading / Quantitative Systems / Cloud Deployment
+
+Project Description:
+Engineered an end-to-end, unattended algorithmic trading system for Indian equity markets. Features modular execution architecture, risk evaluation models, real-time alerts, and containerized deployment.
+
+Key Skills: Python, Docker, Docker Compose, REST / WebSocket APIs, Risk Engine, Linux, Automated Alerting
+
+Deliverables & Impact:
+
+Fault-Tolerant Execution: Containerized the entire trading stack using Docker Compose for 99.9% unattended uptime on Linux environments.
+
+Real-time Risk Controls: Implemented dynamic position sizing, automated stop-loss, target exits, and circuit-breaker alerts.
+
+Extensible Engine: Built a pluggable strategy framework allowing instant deployment of new quantitative trading models.

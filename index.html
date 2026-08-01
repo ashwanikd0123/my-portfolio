@@ -3,27 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My creative project</title>
+    <title>Ashwani Kumar Dwivedi | Portfolio</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
-    <div id="welcome-page" class="container">
-        <div class="flower"></div>
 
-        <div class="title-div">
-            <h1>Ashwani Kumar Dwivedi</h1>
-            <h2>Welcome to my portfolio</h2>
+    <!-- Floating Mobile Menu Button -->
+    <button class="float-button hidden" aria-label="Toggle Navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <!-- Top Sticky Header -->
+    <header class="header">
+        <div class="logo">
+            <span>AD</span>
         </div>
-    </div>
+        <nav class="nav-bar">
+            <a href="#hero" class="nav-link active" data-target="hero">Home</a>
+            <a href="#experience" class="nav-link" data-target="experience">Experience</a>
+            <a href="#projects" class="nav-link" data-target="projects">Projects</a>
+            <a href="#skills" class="nav-link" data-target="skills">Skills</a>
+            <a href="#contact" class="nav-link" data-target="contact">Contact</a>
+        </nav>
+    </header>
 
+    <!-- Floating Sidebar Navigation Dots -->
+    <nav class="sidebar-nav">
+        <a href="#hero" class="sidebar-dot active" data-target="hero">
+            <span class="dot-label">Home</span>
+            <span class="dot"></span>
+        </a>
+        <a href="#experience" class="sidebar-dot" data-target="experience">
+            <span class="dot-label">Experience</span>
+            <span class="dot"></span>
+        </a>
+        <a href="#projects" class="sidebar-dot" data-target="projects">
+            <span class="dot-label">Projects</span>
+            <span class="dot"></span>
+        </a>
+        <a href="#skills" class="sidebar-dot" data-target="skills">
+            <span class="dot-label">Skills</span>
+            <span class="dot"></span>
+        </a>
+        <a href="#contact" class="sidebar-dot" data-target="contact">
+            <span class="dot-label">Contact</span>
+            <span class="dot"></span>
+        </a>
+    </nav>
 
-    <script src="./index.js">
-        
-    </script>
+    <!-- Main Scroll Container -->
+    <main class="scroll-container">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="section">
+            <div class="flower-container">
+                <div class="flower"></div>
+            </div>
+            <div class="hero-content reveal">
+                <p class="hero-sub">Hi, my name is</p>
+                <h1 class="hero-title">Ashwani Kumar Dwivedi</h1>
+                <h2 class="hero-tagline">Software Engineer &amp; Mobile Specialist</h2>
+                <p class="hero-desc">
+                    Software Engineer with <strong>5.5+ years of experience</strong> designing and evolving Android platform framework components powering millions of flagship devices. Specialist in large-scale system architecture, platform performance, and on-device AI optimization.
+                </p>
+                <div class="hero-cta">
+                    <a href="#experience" class="btn btn-primary">Explore Portfolio</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <span class="arrow"></span>
+            </div>
+        </section>
+
+        <!-- 2. EXPERIENCE SECTION -->
+        <section id="experience" class="section">
+            <div class="section-container">
+                <h2 class="section-title reveal">Professional Experience</h2>
+                <div class="timeline-container reveal">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Feb 2021 - Present</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Software Engineer</h3>
+                                <h4>Samsung R&amp;D Institute India</h4>
+                                <span class="location">Noida, India</span>
+                            </div>
+                            <p class="job-intro">
+                                Designing and maintaining Android framework components across multiple flagship device lines, improving modularity, stability, and maintainability for millions of Samsung devices.
+                            </p>
+                            <ul class="job-details">
+                                <li>Contributed <strong>400+ production change lists</strong> across core Android framework modules.</li>
+                                <li>Led stability initiatives that resolved <strong>500+ production issues</strong> and reduced post-release defects by <strong>30%</strong>.</li>
+                                <li>Architected automated testing infrastructure spanning unit, functional, and integration tests, cutting CI execution overhead by <strong>50%</strong>.</li>
+                                <li>Participated in design and architecture discussions for <strong>20+ platform features</strong>, prioritizing backward compatibility and performance.</li>
+                                <li>Established engineering best practices across a team of 15 engineers, conducting <strong>400+ technical code reviews</strong>.</li>
+                                <li>Created comprehensive architecture documentation and Confluence knowledge bases to streamline engineering onboarding.</li>
+                            </ul>
+                            <div class="job-tech">
+                                <span class="badge">Android SDK</span>
+                                <span class="badge">AOSP</span>
+                                <span class="badge">Kotlin</span>
+                                <span class="badge">Java</span>
+                                <span class="badge">C++</span>
+                                <span class="badge">System UI</span>
+                                <span class="badge">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PROJECTS SECTION -->
+        <section id="projects" class="section">
+            <div class="section-container">
+                <h2 class="section-title reveal">Featured Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project 1 -->
+                    <div class="project-card reveal">
+                        <div class="project-header">
+                            <div class="project-domain">On-Device AI / CV</div>
+                            <div class="project-metrics">30% Latency Cut</div>
+                        </div>
+                        <h3 class="project-name">On-Device Sky Segmentation</h3>
+                        <p class="project-role">Mobile ML &amp; Performance Engineer</p>
+                        <p class="project-desc">
+                            Designed and deployed an end-to-end compact Semantic Segmentation pipeline optimized for resource-constrained mobile hardware. Built automated deployment workflows connecting deep learning models to native Android runtime packages (AAR).
+                        </p>
+                        <ul class="project-impact">
+                            <li>Quantized compact CNN model maintains high mIoU accuracy under 5MB.</li>
+                            <li>AAR integration testing pipeline cuts integration overhead by 50%.</li>
+                            <li>Achieved 60 FPS real-time execution on mid-range devices via INT8 quantization.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>CNN</span>
+                            <span>Computer Vision</span>
+                            <span>INT8</span>
+                            <span>Android AAR</span>
+                            <span>CI/CD</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card reveal">
+                        <div class="project-header">
+                            <div class="project-domain">iOS Architecture</div>
+                            <div class="project-metrics">Steady 60 FPS</div>
+                        </div>
+                        <h3 class="project-name">Web-to-Native iOS Health Platform</h3>
+                        <p class="project-role">Senior iOS / Hybrid Systems Engineer</p>
+                        <p class="project-desc">
+                            Architected secure Web-to-Native iOS communication pipelines for a health platform. Built backward-compatible SwiftUI WebView interfaces with custom JavaScript bridges and deep-linking protocols.
+                        </p>
+                        <ul class="project-impact">
+                            <li>30% data latency reduction via secure bidirectional JS bridging.</li>
+                            <li>25% frame drop reduction via memory profiling and layout flattening.</li>
+                            <li>Maintained robust backward compatibility for legacy iOS versions.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>SwiftUI</span>
+                            <span>JavaScript</span>
+                            <span>JS Bridge</span>
+                            <span>Deep-Linking</span>
+                            <span>XCode Profiler</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card reveal">
+                        <div class="project-header">
+                            <div class="project-domain">Android Framework</div>
+                            <div class="project-metrics">Zero Crashes</div>
+                        </div>
+                        <h3 class="project-name">Android Display Settings Module</h3>
+                        <p class="project-role">Android System Framework Engineer</p>
+                        <p class="project-desc">
+                            Designed and integrated custom Display Settings UI modules for flagship Android devices. Handled edge-to-edge screen rendering, display cutout adjustments (notch/hole-punch), and dynamic orientation controls.
+                        </p>
+                        <ul class="project-impact">
+                            <li>Flawless edge-to-edge adaptive layouts across multiple device form factors.</li>
+                            <li>Zero post-release crashes achieved through strict regression testing.</li>
+                            <li>AOSP alignment using WindowInsets &amp; DisplayCutout APIs.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>Kotlin</span>
+                            <span>AOSP</span>
+                            <span>DisplayCutout</span>
+                            <span>WindowInsets</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card reveal">
+                        <div class="project-header">
+                            <div class="project-domain">Android UI / Component</div>
+                            <div class="project-metrics">Fluid Selection</div>
+                        </div>
+                        <h3 class="project-name">Dynamic People Selector Engine</h3>
+                        <p class="project-role">Native Android UI / Feature Engineer</p>
+                        <p class="project-desc">
+                            Engineered a production-ready dynamic contacts selection module for Android. Integrated an optimized RecyclerView with real-time UI chips sync, allowing users to select and manage multi-contact selections.
+                        </p>
+                        <ul class="project-impact">
+                            <li>Used DiffUtil and custom Chip-Groups to eliminate scroll stutter.</li>
+                            <li>Modularized into an isolated UI library used across multiple application screens.</li>
+                            <li>Strict state management prevents selection desync.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>RecyclerView</span>
+                            <span>Custom Views</span>
+                            <span>Material Chips</span>
+                            <span>DiffUtil</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card reveal">
+                        <div class="project-header">
+                            <div class="project-domain">FinTech / Systems</div>
+                            <div class="project-metrics">99.9% Uptime</div>
+                        </div>
+                        <h3 class="project-name">Automated Algo Trading Engine</h3>
+                        <p class="project-role">Systems Architect &amp; Full-Stack Developer</p>
+                        <p class="project-desc">
+                            Engineered an end-to-end, unattended algorithmic trading system for Indian equity markets. Features modular execution architecture, risk evaluation models, real-time alerts, and containerized deployment.
+                        </p>
+                        <ul class="project-impact">
+                            <li>Fault-tolerant containerized stack using Docker Compose on Linux.</li>
+                            <li>Real-time position sizing, automated stop-loss, and circuit breakers.</li>
+                            <li>Pluggable strategy framework allows rapid strategy deployment.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Docker</span>
+                            <span>Docker Compose</span>
+                            <span>WebSockets</span>
+                            <span>REST APIs</span>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SKILLS SECTION -->
+        <section id="skills" class="section">
+            <div class="section-container">
+                <h2 class="section-title reveal">Skills &amp; Expertise</h2>
+                <div class="skills-container">
+                    
+                    <!-- Group 1 -->
+                    <div class="skills-card reveal">
+                        <h3>Languages</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Group 2 -->
+                    <div class="skills-card reveal">
+                        <h3>Frameworks &amp; SDKs</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Android SDK</span>
+                            <span class="skill-tag">Jetpack Compose</span>
+                            <span class="skill-tag">SwiftUI</span>
+                            <span class="skill-tag">RecyclerView</span>
+                            <span class="skill-tag">Custom Views</span>
+                            <span class="skill-tag">Material Components</span>
+                        </div>
+                    </div>
+
+                    <!-- Group 3 -->
+                    <div class="skills-card reveal">
+                        <h3>Core Computer Science</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Algorithms</span>
+                            <span class="skill-tag">Data Structures</span>
+                            <span class="skill-tag">OOP</span>
+                            <span class="skill-tag">Design Patterns</span>
+                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">MVVM / MVC</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Model Optimization</span>
+                        </div>
+                    </div>
+
+                    <!-- Group 4 -->
+                    <div class="skills-card reveal">
+                        <h3>Tools &amp; Infrastructure</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Docker Compose</span>
+                            <span class="skill-tag">CI/CD Automation</span>
+                            <span class="skill-tag">Git / GitHub</span>
+                            <span class="skill-tag">Linux / Bash</span>
+                            <span class="skill-tag">REST &amp; WebSockets</span>
+                            <span class="skill-tag">Agile / Scrum</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT SECTION -->
+        <section id="contact" class="section">
+            <div class="section-container">
+                <h2 class="section-title reveal">Get In Touch</h2>
+                <div class="contact-grid">
+                    
+                    <!-- Left: Form -->
+                    <div class="contact-form-container reveal">
+                        <h3>Send a Message</h3>
+                        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent! Thank you for reaching out.');">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required placeholder=" ">
+                                <label for="email">Your Email</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="5" required placeholder=" "></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Right: Info -->
+                    <div class="contact-info-container reveal">
+                        <h3>Contact Information</h3>
+                        <p class="contact-pitch">
+                            I'm always open to discussing system UI frameworks, mobile ML optimizations, trading automation, or new technical challenges. Drop a message!
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="info-item">
+                                <svg class="info-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                <span><a href="mailto:ashwanikd0123@gmail.com">ashwanikd0123@gmail.com</a></span>
+                            </div>
+                            <div class="info-item">
+                                <svg class="info-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                <span><a href="tel:+919559782113">+91 95597 82113</a></span>
+                            </div>
+                            <div class="info-item">
+                                <svg class="info-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <span>Greater Noida, UP, India</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-links">
+                            <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                            </a>
+                        </div>
+
+                        <div class="resume-download">
+                            <a href="./ashwani_resume_3_0.pdf" download="Ashwani_Kumar_Dwivedi_Resume.pdf" class="btn btn-secondary btn-icon">
+                                <svg class="btn-icon-svg" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                                Download Resume (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <p>&copy; 2026 Ashwani Kumar Dwivedi. Made with passion &amp; creative UI/UX details.</p>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- jQuery and scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
