@@ -1,4 +1,24 @@
-1. On-Device Sky Segmentation Pipeline (Deep Learning)
+1. Fluid Vector AR: Vector Studio with Camera Stencils & 3D AR Projection
+Role: Creator & Lead Android Architect
+
+Experience / Domain: Android / AR & Graphics Engine / Real-time Spatial Projection
+
+Project Description:
+State-of-the-art Android vector illustration and tracing studio built from the ground up using 100% Kotlin and Jetpack Compose. Combines a zero-lag Bezier vector drawing engine, live CameraX stencil overlay for real-world surface tracing, and Google ARCore / SceneView for interactive 3D spatial artwork projection. Features infinite canvas navigation, multi-layer controls, custom virtual reticle pointer for finger drawing precision, and clean SVG / PNG / JPEG multi-format export.
+
+Links:
+- Google Play Store: https://play.google.com/store/apps/details?id=com.fluidcraftstudios.fluidvectorar
+- Live Website: https://fluid-vector-ar.vercel.app/
+- Google Play Developer Profile: https://play.google.com/store/apps/dev?id=5560443318503680691
+
+Key Skills: Kotlin 100%, Jetpack Compose, Material Design 3, Google ARCore, SceneView, CameraX, Room DB, Firebase Auth, SVG Exporter, Bezier Curve Smoothing
+
+Deliverables & Impact:
+- Zero-Lag Vector Engine: Implemented custom Bezier curve smoothing (cubicTo), multi-layer management, non-destructive path eraser masking, and full-stack undo/redo.
+- 3D AR Projection & Real-World Tracing: Engineered live CameraX stencil overlay for tracing physical surfaces (paper, walls, shoes) and interactive 3D AR projection with translation, 3-axis rotation, and scaling.
+- Virtual Reticle & Accessibility: Solved the touch-occlusion problem for stylus-free drawing using a customizable crosshair reticle target, and shipped clean SVG, PNG, and JPEG export engines.
+
+2. On-Device Sky Segmentation Pipeline (Deep Learning)
 Role: Mobile ML & Performance Engineer
 
 Experience / Domain: On-Device AI / Computer Vision / Model Optimization
@@ -16,7 +36,7 @@ Compact Model Footprint: Trained and quantized a compact CNN model maintaining h
 
 Automated CI/CD Deployment: Built a reproducible workflow (Training -> Export -> AAR Build -> Integration Testing) cutting feature integration overhead by 50%.
 
-2. Hybrid Web-to-Native iOS Health Platform
+3. Hybrid Web-to-Native iOS Health Platform
 Role: Senior iOS / Hybrid Systems Engineer
 
 Experience / Domain: iOS Architecture / Cross-Platform Bridging / Performance Engineering
@@ -34,7 +54,7 @@ Smooth 60 FPS Rendering: Engineered a high-performance SwiftUI WebView module ma
 
 25% Frame Drop Reduction: Reduced memory footprint and optimized view hierarchy, improving responsiveness across legacy iOS versions.
 
-3. Android System Settings & Display Cutout Module
+4. Android System Settings & Display Cutout Module
 Role: Android System Framework Engineer
 
 Experience / Domain: System UI / Display Architecture / Native Android SDK
@@ -50,7 +70,7 @@ Edge-to-Edge Experience: Successfully engineered full-screen layout adaptation f
 
 Framework Stability: Delivered robust system-level UI code adhering to strict backward compatibility and zero post-release crash metrics.
 
-4. Dynamic Contacts & People Selector Engine
+5. Dynamic Contacts & People Selector Engine
 Role: Native Android UI / Feature Engineer
 
 Experience / Domain: Native UI Components / Custom Views / State Management
@@ -66,7 +86,7 @@ Smooth Recycler Sync: Implemented DiffUtil and custom Chip-Group synchronization
 
 Reusable UI Component: Modularized the People Selector into an isolated UI library used across multiple application contact screens.
 
-5. Automated Algorithmic Trading & Risk Engine
+6. Automated Algorithmic Trading & Risk Engine
 Role: Systems Architect & Full-Stack Developer
 
 Experience / Domain: Algorithmic Trading / Quantitative Systems / Cloud Deployment
