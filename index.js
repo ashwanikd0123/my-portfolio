@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --------------------------------------------------------------------------
-       1. FLOWER PETALS GENERATION & ANIMATION
+       1. FLOWER PETALS GENERATION & ANIMATION (AR Vector Compass)
        -------------------------------------------------------------------------- */
     const flowers = document.querySelectorAll('.flower');
     flowers.forEach(flower => {
+        // Clear any existing petals if reloaded
+        flower.innerHTML = '';
         for (let i = 0; i < 24; i++) {
             const angle = i * 15;
             flower.insertAdjacentHTML("beforeend", `
@@ -17,37 +19,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     /* --------------------------------------------------------------------------
-       2. MOBILE HAMBURGER NAVIGATION DRAWER
+       2. THEME SWITCHER (Pro Darkroom / Clean Minimalist Light Mode)
        -------------------------------------------------------------------------- */
-    const floatButton = document.querySelector('.float-button');
-    const navBar = document.querySelector('.nav-bar');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+            localStorage.setItem('portfolio-theme', theme);
+        } catch (e) {
+            console.warn('LocalStorage unavailable for theme persistence', e);
+        }
+    }
 
-    if (floatButton && navBar) {
-        floatButton.addEventListener('click', () => {
-            floatButton.classList.toggle('active');
-            navBar.classList.toggle('active');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
         });
     }
 
     /* --------------------------------------------------------------------------
-       3. SMOOTH SCROLL FOR NAV LINKS & DOTS
+       3. MOBILE HAMBURGER NAVIGATION DRAWER
+       -------------------------------------------------------------------------- */
+    const floatButton = document.getElementById('mobile-menu-btn') || document.querySelector('.float-button');
+    const navBar = document.querySelector('.nav-bar');
+
+    if (floatButton && navBar) {
+        floatButton.addEventListener('click', () => {
+            const isOpen = floatButton.classList.toggle('active');
+            navBar.classList.toggle('active');
+            floatButton.setAttribute('aria-expanded', isOpen);
+        });
+    }
+
+    /* --------------------------------------------------------------------------
+       4. SMOOTH SCROLL FOR NAV LINKS & DOTS
        -------------------------------------------------------------------------- */
     const navLinks = document.querySelectorAll('.nav-link, .sidebar-dot, .hero-cta a, .scroll-indicator a');
     
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const targetId = link.getAttribute('href');
-            if (!targetId || targetId === '#') return;
+            if (!targetId || targetId === '#' || !targetId.startsWith('#')) return;
             
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
+                e.preventDefault();
+                
                 // Close mobile menu if open
                 if (floatButton && navBar) {
                     floatButton.classList.remove('active');
                     navBar.classList.remove('active');
+                    floatButton.setAttribute('aria-expanded', 'false');
                 }
                 
                 targetSection.scrollIntoView({
@@ -58,21 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* --------------------------------------------------------------------------
-       4. SCROLL SPY & ENTRANCE ANIMATIONS (INTERSECTION OBSERVER)
+       5. SCROLL SPY & ENTRANCE ANIMATIONS (INTERSECTION OBSERVER)
        -------------------------------------------------------------------------- */
     const sections = document.querySelectorAll('.section');
     const header = document.querySelector('.header');
     const topNavLinks = document.querySelectorAll('.nav-link');
     const sidebarDots = document.querySelectorAll('.sidebar-dot');
-
-    // Keep scroll work to one update per rendered frame. The desktop layout
-    // scrolls inside `.scroll-container`; mobile scrolls the page itself.
     const scrollContainer = document.querySelector('.scroll-container');
     let scrollUpdateQueued = false;
 
     function updateHeaderOnScroll() {
         const scrollTop = Math.max(window.scrollY, scrollContainer?.scrollTop || 0);
-        header.classList.toggle('scrolled', scrollTop > 50);
+        header.classList.toggle('scrolled', scrollTop > 40);
         scrollUpdateQueued = false;
     }
 
@@ -86,14 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', queueScrollUpdate, { passive: true });
     scrollContainer?.addEventListener('scroll', queueScrollUpdate, { passive: true });
     updateHeaderOnScroll();
-    // Observer options for active sections
+
+    // Intersection observer for section tracking & reveal triggers
     const observerOptions = {
         root: null,
-        // Projects grows far taller than a phone viewport. A percentage threshold
-        // can then never be met, leaving every `.reveal` item invisible.
-        // Reveal a section as soon as it enters the viewport instead.
-        rootMargin: '0px 0px -10% 0px',
-        threshold: 0
+        rootMargin: '0px 0px -15% 0px',
+        threshold: 0.1
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -119,12 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // Reveal each section once. Re-entering a section should not
-                // queue another set of timers while the user is scrolling.
+                // Trigger staggered reveal animation for items inside the section
                 if (!entry.target.dataset.revealed) {
                     entry.target.dataset.revealed = 'true';
                     entry.target.querySelectorAll('.reveal').forEach((el, index) => {
-                        setTimeout(() => el.classList.add('revealed'), index * 75);
+                        setTimeout(() => el.classList.add('revealed'), index * 60);
                     });
                 }
             }

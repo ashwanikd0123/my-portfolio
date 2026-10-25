@@ -1,21 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashwani Kumar Dwivedi | Portfolio</title>
+    <title>Ashwani Kumar Dwivedi | Senior Android Engineer</title>
+    <meta name="description" content="Portfolio of Ashwani Kumar Dwivedi, Senior Android Engineer specializing in Modern Android (Jetpack Compose), Clean Architecture, and High-Performance Mobile Systems.">
+    <meta name="theme-color" content="#0F172A">
     
-    <!-- Google Fonts -->
+    <!-- Theme pre-initialization to prevent FOUC -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('portfolio-theme');
+                if (savedTheme === 'light' || savedTheme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
+    <!-- Google Fonts: Outfit for display headers, Plus Jakarta Sans for body, JetBrains Mono for code/badges -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
     <!-- Floating Mobile Menu Button -->
-    <button class="float-button hidden" aria-label="Toggle Navigation">
+    <button class="float-button hidden" aria-label="Toggle Navigation" id="mobile-menu-btn">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -33,10 +51,16 @@
             <a href="#skills" class="nav-link" data-target="skills">Skills</a>
             <a href="#contact" class="nav-link" data-target="contact">Contact</a>
         </nav>
+        <div class="header-actions">
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle Pro Darkroom / Clean Light Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 2a10 10 0 0 0-.19 1.4 10 10 0 0 0 12.16 9.79 10 10 0 1 1-11.97-11.19z"/></svg>
+            </button>
+        </div>
     </header>
 
     <!-- Floating Sidebar Navigation Dots -->
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" aria-label="Page Sections">
         <a href="#hero" class="sidebar-dot active" data-target="hero">
             <span class="dot-label">Home</span>
             <span class="dot"></span>
@@ -68,15 +92,23 @@
                 <div class="flower"></div>
             </div>
             <div class="hero-content reveal">
-                <p class="hero-sub">Hi, my name is</p>
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Senior Android Engineer &bull; 5.5+ Years Experience</span>
+                </div>
                 <h1 class="hero-title">Ashwani Kumar Dwivedi</h1>
-                <h2 class="hero-tagline">Senior Android Engineer | Modern Android (Compose) &amp; Scalable Mobile Architecture</h2>
+                <h2 class="hero-tagline">Modern Android (Jetpack Compose) &amp; Scalable Mobile Systems</h2>
                 <p class="hero-desc">
-                    Senior Android Engineer with <strong>5.5 years of experience</strong> building high-scale, production-grade mobile applications and core system components powering millions of flagship devices. Deep expertise in native Android development across modern <strong>Jetpack Compose</strong> architectures and legacy XML/View systems, with a strong focus on <strong>Clean Architecture, MVVM, and reactive state management</strong> using <strong>Kotlin Coroutines and StateFlow</strong>.
+                    Senior Android Engineer building high-scale, production-grade mobile applications and core system components powering millions of flagship devices. Deep expertise across <strong>Jetpack Compose</strong>, <strong>Clean Architecture</strong>, <strong>MVVM</strong>, and reactive state management using <strong>Kotlin Coroutines &amp; StateFlow</strong>, with a passion for 60 FPS graphics, AR engines, and edge-device performance.
                 </p>
                 <div class="hero-cta">
-                    <a href="#experience" class="btn btn-primary">Explore Portfolio</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Explore Projects</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -90,11 +122,13 @@
                     
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">Feb 2021 - Jul 2026</div>
+                        <div class="timeline-date">Feb 2021 &mdash; Present</div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3>Software Engineer</h3>
-                                <h4>Samsung R&amp;D Institute India</h4>
+                                <div>
+                                    <h3>Software Engineer</h3>
+                                    <h4>Samsung R&amp;D Institute India</h4>
+                                </div>
                                 <span class="location">Noida, India</span>
                             </div>
                             <p class="job-intro">
@@ -132,9 +166,9 @@
                             <div class="education-header">
                                 <div>
                                     <h4 class="education-degree">Masters of Technology</h4>
-                                    <p class="education-school">Birla Institute of Technology Pilani</p>
+                                    <p class="education-school">Birla Institute of Technology and Science, Pilani</p>
                                 </div>
-                                <span class="education-date">Mar 2022 - Feb 2024</span>
+                                <span class="education-date">Mar 2022 &mdash; Feb 2024</span>
                             </div>
                             <span class="education-location">Pilani, India</span>
                         </div>
@@ -144,7 +178,7 @@
                                     <h4 class="education-degree">Bachelors of Technology</h4>
                                     <p class="education-school">National Institute of Technology Sikkim</p>
                                 </div>
-                                <span class="education-date">Jul 2016 - Feb 2020</span>
+                                <span class="education-date">Jul 2016 &mdash; Feb 2020</span>
                             </div>
                             <span class="education-location">Sikkim, India</span>
                         </div>
@@ -157,7 +191,10 @@
         <section id="projects" class="section">
             <div class="section-container">
                 <div class="section-header-wrap reveal">
-                    <h2 class="section-title">Featured Projects</h2>
+                    <div>
+                        <h2 class="section-title">Featured Projects</h2>
+                        <p class="section-subtitle">Real-world production apps, spatial AR engines, on-device AI pipelines, and native systems</p>
+                    </div>
                     <a href="https://play.google.com/store/apps/dev?id=5560443318503680691" target="_blank" rel="noopener noreferrer" class="play-dev-badge" title="View Google Play Developer Profile">
                         <svg viewBox="0 0 24 24"><path d="M22.018 13.298l-3.919 2.218-3.515-3.494 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.595zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.112.569l11.295-11.086L1.337.924zm1.884-.71l11.066 10.87-2.673 2.673-10.4-10.4c.5-.47 1.27-.47 2.007-.073zm0 23.572c-.737.397-1.507.397-2.007-.073l10.4-10.4 2.673 2.673L3.221 23.786z"/></svg>
                         <span>Google Play Developer Profile</span>
@@ -165,50 +202,53 @@
                 </div>
                 <div class="projects-grid">
                     
-                    <!-- Project 1: Fluid Vector AR -->
-                    <div class="project-card reveal">
+                    <!-- Project 1: Fluid Vector AR (FLAGSHIP) -->
+                    <div class="project-card project-card-featured reveal">
+                        <div class="featured-banner">FLAGSHIP PROJECT</div>
                         <div class="project-header">
-                            <div class="project-domain">Android / AR &amp; Graphics Engine</div>
-                            <div class="project-metrics">Play Store Live</div>
+                            <div class="project-domain">Android &bull; AR &amp; Graphics Engine</div>
+                            <div class="project-metrics metric-live">Play Store Live</div>
                         </div>
                         <h3 class="project-name">Fluid Vector AR</h3>
                         <p class="project-role">Creator &amp; Lead Android Architect</p>
                         <p class="project-desc">
-                            An advanced vector drawing studio with live CameraX stencil tracing and interactive 3D Augmented Reality projection. Built with 100% Kotlin and Jetpack Compose, featuring a zero-lag Bezier curve vector engine, infinite canvas gestures, multi-layer management, virtual reticle finger drawing, and multi-format export (SVG, PNG, JPEG).
+                            State-of-the-art Android vector illustration and tracing studio built from scratch in 100% Kotlin and Jetpack Compose. Combines a zero-lag Bezier vector engine, live CameraX stencil overlay for real-world surface tracing, and Google ARCore / SceneView for interactive 3D spatial artwork projection.
                         </p>
                         <ul class="project-impact">
-                            <li>Engineered high-performance vector drawing &amp; AR stencil studio in <strong>100% Kotlin</strong> using <strong>Jetpack Compose</strong>, <strong>Clean Architecture</strong>, and <strong>MVVM</strong>.</li>
-                            <li>Implemented infinite 2D canvas with sub-pixel Bezier curve smoothing and matrix transformations, maintaining smooth <strong>60 FPS</strong> rendering under heavy stroke loads.</li>
-                            <li>Built interactive shape engine featuring vertex-level polygon deformation, custom undo/redo stacks, and multi-format export pipelines (<strong>SVG, PNG, JPEG</strong>).</li>
-                            <li>Integrated <strong>Google ARCore &amp; SceneView</strong> for 3-axis spatial projection, alongside <strong>CameraX live preview overlay</strong> with hardware-accelerated opacity blending for precision tracing.</li>
-                            <li>Developed local persistence with <strong>Room DB</strong> and DataStore Preferences, coupled with <strong>Firebase Auth</strong> and Android Credential Manager API.</li>
+                            <li><strong>Zero-Lag Vector Engine:</strong> Engineered infinite 2D canvas with sub-pixel Bezier curve smoothing, vertex-level polygon deformation, and full-stack undo/redo at smooth <strong>60 FPS</strong>.</li>
+                            <li><strong>3D Spatial AR Projection:</strong> Integrated <strong>Google ARCore &amp; SceneView</strong> for 3-axis artwork projection with translation, rotation, and scale in real environments.</li>
+                            <li><strong>Live CameraX Stencil Tracing:</strong> Hardware-accelerated camera preview overlay with opacity blending to trace physical surfaces (paper, walls, wood).</li>
+                            <li><strong>Virtual Reticle &amp; Multi-Format Export:</strong> Solved stylus-free touch occlusion via custom virtual crosshair; engineered clean vector <strong>SVG, PNG, and JPEG</strong> export pipelines.</li>
+                            <li><strong>Modern Architecture:</strong> Built with <strong>Jetpack Compose</strong>, <strong>Clean Architecture</strong>, <strong>Room DB</strong>, DataStore, and Firebase Auth.</li>
                         </ul>
                         <div class="project-tech">
                             <span>Kotlin</span>
                             <span>Jetpack Compose</span>
+                            <span>Material Design 3</span>
                             <span>Google ARCore</span>
                             <span>SceneView</span>
                             <span>CameraX</span>
                             <span>Room DB</span>
                             <span>Firebase</span>
+                            <span>SVG Engine</span>
                         </div>
                         <div class="project-links">
                             <a href="https://play.google.com/store/apps/details?id=com.fluidcraftstudios.fluidvectorar" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-play">
                                 <svg viewBox="0 0 24 24"><path d="M22.018 13.298l-3.919 2.218-3.515-3.494 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.595zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.112.569l11.295-11.086L1.337.924zm1.884-.71l11.066 10.87-2.673 2.673-10.4-10.4c.5-.47 1.27-.47 2.007-.073zm0 23.572c-.737.397-1.507.397-2.007-.073l10.4-10.4 2.673 2.673L3.221 23.786z"/></svg>
-                                <span>Google Play</span>
+                                <span>Get on Google Play</span>
                             </a>
                             <a href="https://fluid-vector-ar.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-secondary">
                                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                                <span>Live Website</span>
+                                <span>Live Web App</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
+                    <!-- Project 2: On-Device Sky Segmentation -->
                     <div class="project-card reveal">
                         <div class="project-header">
-                            <div class="project-domain">On-Device AI / CV</div>
-                            <div class="project-metrics">30% Latency Cut</div>
+                            <div class="project-domain">On-Device AI &bull; Computer Vision</div>
+                            <div class="project-metrics metric-boost">30% Latency Cut</div>
                         </div>
                         <h3 class="project-name">On-Device Sky Segmentation</h3>
                         <p class="project-role">Mobile ML &amp; Performance Engineer</p>
@@ -216,61 +256,62 @@
                             Designed and deployed an end-to-end compact Semantic Segmentation pipeline optimized for resource-constrained mobile hardware. Built automated deployment workflows connecting deep learning models to native Android runtime packages (AAR).
                         </p>
                         <ul class="project-impact">
-                            <li>Quantized compact CNN model maintains high mIoU accuracy under 5MB.</li>
-                            <li>AAR integration testing pipeline cuts integration overhead by 50%.</li>
-                            <li>Achieved 60 FPS real-time execution on mid-range devices via INT8 quantization.</li>
+                            <li><strong>Real-time 60 FPS Inference:</strong> Quantized compact CNN model via INT8 quantization, achieving sub-20ms inference under 5MB RAM overhead.</li>
+                            <li><strong>Automated CI/CD AAR Pipeline:</strong> Created automated training &rarr; export &rarr; AAR package workflows, cutting feature integration overhead by <strong>50%</strong>.</li>
+                            <li><strong>High Accuracy:</strong> Maintained high mIoU segmentation benchmark accuracy while preventing thermal throttling on mid-range devices.</li>
                         </ul>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>CNN</span>
+                            <span>Semantic Segmentation</span>
                             <span>Computer Vision</span>
-                            <span>INT8</span>
+                            <span>INT8 Quantization</span>
                             <span>Android AAR</span>
                             <span>CI/CD</span>
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
+                    <!-- Project 3: iOS Health Platform -->
                     <div class="project-card reveal">
                         <div class="project-header">
-                            <div class="project-domain">iOS Architecture / Mobile App</div>
-                            <div class="project-metrics">Steady 60 FPS</div>
+                            <div class="project-domain">iOS Architecture &bull; Hybrid Systems</div>
+                            <div class="project-metrics metric-perf">Steady 60 FPS</div>
                         </div>
-                        <h3 class="project-name">iOS Health Application</h3>
-                        <p class="project-role">Mobile Systems &amp; iOS Engineer</p>
+                        <h3 class="project-name">Hybrid Web-to-Native iOS Health Platform</h3>
+                        <p class="project-role">Senior iOS &amp; Hybrid Systems Engineer</p>
                         <p class="project-desc">
-                            Architected and integrated hybrid Web-to-Native iOS features using SwiftUI, custom JavaScript bridging, and deep-linking pipelines for the Health application.
+                            Architected secure Web-to-Native iOS communication pipelines for the Health application. Built backward-compatible SwiftUI WebView interfaces with custom JavaScript bridges and deep-linking protocols.
                         </p>
                         <ul class="project-impact">
-                            <li><strong>High-Performance SwiftUI Module:</strong> Engineered a high-performance WebView module in SwiftUI with backward compatibility for older iOS versions, maintaining smooth <strong>60 FPS rendering speed</strong> and clean architecture.</li>
-                            <li><strong>Bidirectional JS Bridging:</strong> Applied secure JavaScript bridging and deep-linking protocols to enable seamless bidirectional communication between web components and native screens, reducing data latency by <strong>30%</strong>.</li>
-                            <li><strong>Memory &amp; Frame Optimization:</strong> Optimized hybrid view performance and memory utilization, cutting frame drops by <strong>25%</strong> and improving responsiveness across lower-end devices.</li>
-                            <li><strong>Deployment Acceleration:</strong> Standardized web-to-native integration workflows, accelerating feature deployment cycles by <strong>20%</strong> for the iOS Health platform.</li>
+                            <li><strong>High-Performance SwiftUI Module:</strong> Engineered WebView container in SwiftUI maintaining steady <strong>60 FPS</strong> rendering and clean architecture.</li>
+                            <li><strong>Bidirectional JS Bridging:</strong> Implemented secure JavaScript bridge and deep-linking protocols, reducing data latency by <strong>30%</strong>.</li>
+                            <li><strong>Memory &amp; Frame Optimization:</strong> Cut frame drops by <strong>25%</strong> and reduced memory footprint across legacy iOS versions.</li>
                         </ul>
                         <div class="project-tech">
                             <span>SwiftUI</span>
                             <span>JavaScript</span>
                             <span>JS Bridge</span>
                             <span>Deep-Linking</span>
-                            <span>Mobile Performance</span>
+                            <span>Memory Profiling</span>
+                            <span>iOS SDK</span>
                         </div>
                     </div>
 
-                    <!-- Project 4 -->
+                    <!-- Project 4: Android Display Cutout Module -->
                     <div class="project-card reveal">
                         <div class="project-header">
-                            <div class="project-domain">Native Android / Adaptive UI</div>
-                            <div class="project-metrics">Adaptive 60 FPS</div>
+                            <div class="project-domain">System UI &bull; Display Architecture</div>
+                            <div class="project-metrics metric-perf">Adaptive 60 FPS</div>
                         </div>
-                        <h3 class="project-name">Adaptive Display &amp; Theme UI Module</h3>
-                        <p class="project-role">Senior Android UI &amp; Feature Engineer</p>
+                        <h3 class="project-name">Android System Settings &amp; Display Cutout Module</h3>
+                        <p class="project-role">Android System Framework Engineer</p>
                         <p class="project-desc">
-                            Designed and integrated adaptive Display &amp; Appearance Settings UI modules for flagship Android devices. Handled edge-to-edge screen rendering, modern WindowInsets handling, dynamic display cutout adaptations (notch/hole-punch support), and dynamic dark/light theme switching.
+                            Designed and integrated custom Display Settings UI modules for flagship Android devices. Handled edge-to-edge screen rendering, modern WindowInsets handling, dynamic display cutout adaptations (notch/hole-punch support), and dynamic dark/light theme switching.
                         </p>
                         <ul class="project-impact">
-                            <li>Flawless edge-to-edge adaptive layouts across multiple device form factors and screen orientations.</li>
-                            <li>Zero post-release crashes achieved through strict regression testing and defensive state management.</li>
-                            <li>Engineered clean UI integration using modern WindowInsets &amp; DisplayCutout APIs adhering to official Android application guidelines.</li>
+                            <li><strong>Edge-to-Edge Adaptive Layout:</strong> Implemented responsive full-screen adaptation across varied display cutout profiles and device form factors.</li>
+                            <li><strong>Zero Post-Release Crashes:</strong> Achieved zero crash metrics through rigorous backward-compatibility regression suites and defensive state design.</li>
+                            <li><strong>WindowInsets &amp; Cutout APIs:</strong> Built clean architecture modules adhering to official Android application guidelines.</li>
                         </ul>
                         <div class="project-tech">
                             <span>Kotlin</span>
@@ -282,21 +323,21 @@
                         </div>
                     </div>
 
-                    <!-- Project 5 -->
+                    <!-- Project 5: Dynamic People Selector Engine -->
                     <div class="project-card reveal">
                         <div class="project-header">
-                            <div class="project-domain">Android UI / Component</div>
-                            <div class="project-metrics">Fluid Selection</div>
+                            <div class="project-domain">Native Android UI &bull; Custom Views</div>
+                            <div class="project-metrics metric-boost">Fluid Selection</div>
                         </div>
-                        <h3 class="project-name">Dynamic People Selector Engine</h3>
-                        <p class="project-role">Native Android UI / Feature Engineer</p>
+                        <h3 class="project-name">Dynamic Contacts &amp; People Selector Engine</h3>
+                        <p class="project-role">Native Android UI &amp; Feature Engineer</p>
                         <p class="project-desc">
-                            Engineered a production-ready dynamic contacts selection module for Android. Integrated an optimized RecyclerView with real-time UI chips sync, allowing users to select and manage multi-contact selections.
+                            Engineered a production-ready dynamic contacts selection module for Android. Integrated an optimized RecyclerView with real-time UI chips sync, allowing users to select and manage multi-contact selections seamlessly.
                         </p>
                         <ul class="project-impact">
-                            <li>Used DiffUtil and custom Chip-Groups to eliminate scroll stutter.</li>
-                            <li>Modularized into an isolated UI library used across multiple application screens.</li>
-                            <li>Strict state management prevents selection desync.</li>
+                            <li><strong>Stutter-Free Sync:</strong> Implemented DiffUtil and custom Chip-Group synchronization to eliminate UI stuttering during fast scrolling.</li>
+                            <li><strong>Modular Architecture:</strong> Isolated the People Selector into a standalone reusable UI library used across multiple application screens.</li>
+                            <li><strong>Defensive State Management:</strong> Guaranteed zero desync between chip containers and underlying recycler items.</li>
                         </ul>
                         <div class="project-tech">
                             <span>Kotlin</span>
@@ -304,24 +345,25 @@
                             <span>Custom Views</span>
                             <span>Material Chips</span>
                             <span>DiffUtil</span>
+                            <span>State Management</span>
                         </div>
                     </div>
 
-                    <!-- Project 6 -->
+                    <!-- Project 6: Algo Trading Engine -->
                     <div class="project-card reveal">
                         <div class="project-header">
-                            <div class="project-domain">FinTech / Systems</div>
-                            <div class="project-metrics">99.9% Uptime</div>
+                            <div class="project-domain">FinTech &bull; Quantitative Systems</div>
+                            <div class="project-metrics metric-live">99.9% Uptime</div>
                         </div>
-                        <h3 class="project-name">Automated Algo Trading Engine</h3>
+                        <h3 class="project-name">Automated Algorithmic Trading &amp; Risk Engine</h3>
                         <p class="project-role">Systems Architect &amp; Full-Stack Developer</p>
                         <p class="project-desc">
                             Engineered an end-to-end, unattended algorithmic trading system for Indian equity markets. Features modular execution architecture, risk evaluation models, real-time alerts, and containerized deployment.
                         </p>
                         <ul class="project-impact">
-                            <li>Fault-tolerant containerized stack using Docker Compose on Linux.</li>
-                            <li>Real-time position sizing, automated stop-loss, and circuit breakers.</li>
-                            <li>Pluggable strategy framework allows rapid strategy deployment.</li>
+                            <li><strong>Fault-Tolerant Execution:</strong> Containerized full trading stack using Docker Compose for <strong>99.9% unattended uptime</strong> on Linux.</li>
+                            <li><strong>Real-time Risk Controls:</strong> Built dynamic position sizing, automated stop-loss, target exits, and circuit-breaker safety triggers.</li>
+                            <li><strong>Pluggable Strategy Engine:</strong> Designed extensible framework enabling instant deployment and backtesting of new quant models.</li>
                         </ul>
                         <div class="project-tech">
                             <span>Python</span>
@@ -333,30 +375,29 @@
                         </div>
                     </div>
 
-
-                    <!-- Project 7 -->
+                    <!-- Project 7: Simple Ludo Game -->
                     <div class="project-card reveal">
                         <div class="project-header">
-                            <div class="project-domain">Android / Native Engine</div>
-                            <div class="project-metrics">60 FPS Gameplay</div>
+                            <div class="project-domain">Android &bull; 2D Native Engine</div>
+                            <div class="project-metrics metric-perf">60 FPS Gameplay</div>
                         </div>
-                        <h3 class="project-name">Simple Ludo Game</h3>
+                        <h3 class="project-name">2D Canvas Ludo Engine</h3>
                         <p class="project-role">Android Game &amp; Native Engine Developer</p>
                         <p class="project-desc">
-                            Built a 2D Ludo board game application featuring a custom Canvas rendering engine, deterministic token-path algorithms, and local turn-based multiplayer support.
+                            Built a 2D Ludo board game application featuring a custom Canvas rendering engine, deterministic token-path algorithms, and local turn-based multiplayer support without external game engines.
                         </p>
                         <ul class="project-impact">
-                            <li>Engineered lightweight Canvas rendering for 60 FPS gameplay on low-end devices without external game engines.</li>
-                            <li>Designed custom path-traversal math and dynamic dice-rolling algorithms with safe-zone logic.</li>
-                            <li>Implemented a turn-based state machine for token captures, player elimination, and home entries.</li>
+                            <li><strong>Custom Canvas Rendering:</strong> Maintained rock-solid <strong>60 FPS</strong> gameplay on low-end devices with minimal CPU/battery draw.</li>
+                            <li><strong>Deterministic Game Math:</strong> Designed custom token-path algorithms with safe-zone logic and dynamic dice physics.</li>
+                            <li><strong>Turn-Based State Machine:</strong> Clean state machine handling token capture, player elimination, and winning states.</li>
                         </ul>
                         <div class="project-tech">
-                            <span>Android</span>
-                            <span>Canvas</span>
+                            <span>Android SDK</span>
+                            <span>Canvas API</span>
                             <span>Java</span>
                             <span>2D Game Engine</span>
                             <span>State Machine</span>
-                            <span>Game Algorithms</span>
+                            <span>Game Math</span>
                         </div>
                     </div>
                 </div>
@@ -366,18 +407,23 @@
         <!-- 4. SKILLS SECTION -->
         <section id="skills" class="section">
             <div class="section-container">
-                <h2 class="section-title reveal">Skills &amp; Expertise</h2>
+                <h2 class="section-title reveal">Skills &amp; Technical Expertise</h2>
                 <div class="skills-container">
                     
                     <!-- Group 1 -->
                     <div class="skills-card reveal">
-                        <h3>Languages</h3>
+                        <div class="skills-card-header">
+                            <div class="skills-icon-wrap">
+                                <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                            </div>
+                            <h3>Languages</h3>
+                        </div>
                         <div class="skills-list">
                             <span class="skill-tag">Kotlin</span>
                             <span class="skill-tag">Java</span>
                             <span class="skill-tag">Swift</span>
                             <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">C / C++</span>
                             <span class="skill-tag">JavaScript</span>
                             <span class="skill-tag">SQL</span>
                         </div>
@@ -385,16 +431,22 @@
 
                     <!-- Group 2 -->
                     <div class="skills-card reveal">
-                        <h3>Android &amp; Mobile SDKs</h3>
+                        <div class="skills-card-header">
+                            <div class="skills-icon-wrap">
+                                <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                            </div>
+                            <h3>Android &amp; Mobile SDKs</h3>
+                        </div>
                         <div class="skills-list">
                             <span class="skill-tag">Android SDK</span>
                             <span class="skill-tag">Jetpack Compose</span>
-                            <span class="skill-tag">Coroutines</span>
-                            <span class="skill-tag">StateFlow</span>
-                            <span class="skill-tag">Hilt DI</span>
+                            <span class="skill-tag">Coroutines &amp; Flow</span>
+                            <span class="skill-tag">StateFlow &amp; SharedFlow</span>
+                            <span class="skill-tag">Hilt &amp; Dagger</span>
                             <span class="skill-tag">Room DB</span>
-                            <span class="skill-tag">CameraX</span>
+                            <span class="skill-tag">CameraX API</span>
                             <span class="skill-tag">Google ARCore</span>
+                            <span class="skill-tag">SceneView</span>
                             <span class="skill-tag">SwiftUI</span>
                             <span class="skill-tag">Material Design 3</span>
                             <span class="skill-tag">RecyclerView &amp; Custom Views</span>
@@ -403,29 +455,41 @@
 
                     <!-- Group 3 -->
                     <div class="skills-card reveal">
-                        <h3>Architecture &amp; Engineering</h3>
+                        <div class="skills-card-header">
+                            <div class="skills-icon-wrap">
+                                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <h3>Architecture &amp; Engineering</h3>
+                        </div>
                         <div class="skills-list">
                             <span class="skill-tag">Clean Architecture</span>
-                            <span class="skill-tag">MVVM</span>
+                            <span class="skill-tag">MVVM &amp; MVI</span>
                             <span class="skill-tag">Reactive State Management</span>
-                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">Mobile System Design</span>
                             <span class="skill-tag">Algorithms &amp; Data Structures</span>
-                            <span class="skill-tag">OOP &amp; Design Patterns</span>
+                            <span class="skill-tag">Design Patterns &amp; SOLID</span>
                             <span class="skill-tag">Computer Vision &amp; Mobile ML</span>
+                            <span class="skill-tag">INT8 Quantization</span>
                         </div>
                     </div>
 
                     <!-- Group 4 -->
                     <div class="skills-card reveal">
-                        <h3>Tools, Profiling &amp; Testing</h3>
+                        <div class="skills-card-header">
+                            <div class="skills-icon-wrap">
+                                <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                            </div>
+                            <h3>Tools, Profiling &amp; Testing</h3>
+                        </div>
                         <div class="skills-list">
                             <span class="skill-tag">Android Studio Profiler</span>
                             <span class="skill-tag">Systrace &amp; Perfetto</span>
-                            <span class="skill-tag">Espresso (UI Testing)</span>
+                            <span class="skill-tag">Espresso (UI Tests)</span>
+                            <span class="skill-tag">JUnit &amp; MockK</span>
                             <span class="skill-tag">CI/CD Automation</span>
                             <span class="skill-tag">Git / GitHub</span>
-                            <span class="skill-tag">Docker &amp; Compose</span>
-                            <span class="skill-tag">Linux / Bash</span>
+                            <span class="skill-tag">Docker &amp; Docker Compose</span>
+                            <span class="skill-tag">Linux / Bash Scripting</span>
                         </div>
                     </div>
 
@@ -439,57 +503,70 @@
                 <h2 class="section-title reveal">Get In Touch</h2>
                 <div class="contact-grid">
                     <div class="contact-info-container reveal">
-                        <h3>Contact Information</h3>
+                        <h3>Let's Build Something Exceptional</h3>
                         <p class="contact-pitch">
-                            I'm always open to discussing modern Android app development, Jetpack Compose architectures, mobile performance optimizations, AR/CV integrations, or new engineering challenges. Feel free to reach out!
+                            I am always open to discussing modern Android architectures, Jetpack Compose, high-performance mobile graphics, AR/CV integrations, or senior engineering opportunities. Let's connect!
                         </p>
                         
                         <div class="contact-details">
                             <div class="info-item">
-                                <svg class="info-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                                <span><a href="mailto:ashwanikd0123@gmail.com">ashwanikd0123@gmail.com</a></span>
+                                <div class="info-icon-wrapper">
+                                    <svg class="info-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                </div>
+                                <div class="info-meta">
+                                    <span class="info-label">Email</span>
+                                    <span class="info-val"><a href="mailto:ashwanikd0123@gmail.com">ashwanikd0123@gmail.com</a></span>
+                                </div>
                             </div>
                             <div class="info-item">
-                                <svg class="info-icon" viewBox="0 0 24 24"><path d="M22.018 13.298l-3.919 2.218-3.515-3.494 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.595zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.112.569l11.295-11.086L1.337.924zm1.884-.71l11.066 10.87-2.673 2.673-10.4-10.4c.5-.47 1.27-.47 2.007-.073zm0 23.572c-.737.397-1.507.397-2.007-.073l10.4-10.4 2.673 2.673L3.221 23.786z"/></svg>
-                                <span><a href="https://play.google.com/store/apps/dev?id=5560443318503680691" target="_blank" rel="noopener noreferrer">Google Play Developer Profile</a></span>
+                                <div class="info-icon-wrapper">
+                                    <svg class="info-icon" viewBox="0 0 24 24"><path d="M22.018 13.298l-3.919 2.218-3.515-3.494 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.595zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.112.569l11.295-11.086L1.337.924zm1.884-.71l11.066 10.87-2.673 2.673-10.4-10.4c.5-.47 1.27-.47 2.007-.073zm0 23.572c-.737.397-1.507.397-2.007-.073l10.4-10.4 2.673 2.673L3.221 23.786z"/></svg>
+                                </div>
+                                <div class="info-meta">
+                                    <span class="info-label">Google Play</span>
+                                    <span class="info-val"><a href="https://play.google.com/store/apps/dev?id=5560443318503680691" target="_blank" rel="noopener noreferrer">FluidCraft Studios Developer Profile</a></span>
+                                </div>
                             </div>
                             <div class="info-item">
-                                <svg class="info-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                <span>Noida, India</span>
+                                <div class="info-icon-wrapper">
+                                    <svg class="info-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                </div>
+                                <div class="info-meta">
+                                    <span class="info-label">Location</span>
+                                    <span class="info-val">Noida / NCR, India (Open to Remote / Relocation)</span>
+                                </div>
                             </div>
                         </div>
 
                         <div class="contact-links">
-                            <a href="https://www.linkedin.com/in/ashwani-kumar-dwivedi-1a2469316/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <a href="https://www.linkedin.com/in/ashwani-kumar-dwivedi-1a2469316/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile" title="LinkedIn Profile">
                                 <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                             </a>
-                            <a href="https://github.com/ashwanikd0123" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" title="GitHub">
+                            <a href="https://github.com/ashwanikd0123" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile" title="GitHub Profile">
                                 <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
                             </a>
-                            <a href="https://play.google.com/store/apps/dev?id=5560443318503680691" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Play Developer" title="Google Play Developer Profile">
+                            <a href="https://play.google.com/store/apps/dev?id=5560443318503680691" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Play Profile" title="Google Play Developer Profile">
                                 <svg viewBox="0 0 24 24"><path d="M22.018 13.298l-3.919 2.218-3.515-3.494 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.595zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.112.569l11.295-11.086L1.337.924zm1.884-.71l11.066 10.87-2.673 2.673-10.4-10.4c.5-.47 1.27-.47 2.007-.073zm0 23.572c-.737.397-1.507.397-2.007-.073l10.4-10.4 2.673 2.673L3.221 23.786z"/></svg>
                             </a>
                         </div>
 
                         <div class="resume-download">
-                            <a href="./ashwani_resume_3_3.pdf" download="Ashwani_Kumar_Dwivedi_Resume.pdf" class="btn btn-secondary btn-icon">
+                            <a href="./ashwani_resume_3_3.pdf" download="Ashwani_Kumar_Dwivedi_Resume.pdf" class="btn btn-primary btn-icon">
                                 <svg class="btn-icon-svg" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                                Download Resume (PDF)
+                                <span>Download Official Resume (PDF)</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <footer class="footer">
-                    <p>&copy; 2026 Ashwani Kumar Dwivedi. Made with passion &amp; creative UI/UX details.</p>
+                    <p>&copy; 2026 Ashwani Kumar Dwivedi &bull; Engineered with modern web standards, Jetpack Compose &amp; FluidVectorAR Color System.</p>
                 </footer>
             </div>
         </section>
 
     </main>
 
-    <!-- jQuery and scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="./index.js"></script>
 </body>
 </html>
